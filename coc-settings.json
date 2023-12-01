@@ -1,0 +1,50 @@
+{
+  "suggest.autoTrigger": "always",
+  "suggest.timeout": 5000,
+  "suggest.floatConfig": {
+    "border": false
+  },
+	"suggest.detailField": "preview",
+  "signature.floatConfig": {
+    "border": false
+  },
+  "hover.floatConfig": {
+    "border": false
+  },
+  "codeLens.enable": true,
+  "eslint.enable": true,
+  "eslint.packageManager": "npm",
+  "eslint.fixOnSaveTimeout": 1000,
+  "eslint.alwaysShowStatus": true,
+  "eslint.run": "onSave",
+	"eslint.autoFixOnSave":true,
+  "eslint.format.enable": false,
+  "diagnostic.messageTarget": "float",
+  "diagnostic.warningSign": "⚠️",
+  "diagnostic.errorSign": "⏭️",
+  "diagnostic.virtualTextFormat": "%message",
+	"diagnostic.enableHighlightLineNumber": true,
+	"diagnostic.floatConfig": {
+    "border": true
+  },
+  "colors.enable": true,
+	"colors.highlightPriority": 1000,
+  "prettier.enable": true,
+  "prettier.singleQuote": true,
+	"prettier.jsxSingleQuote": true,
+  "prettier.requireConfig": true,
+	"prettier.onlyUseLocalVersion": true,
+	"typescript.preferences.quoteStyle":"auto",
+	"javascript.preferences.quoteStyle": "auto",
+  "javascript.suggest.autoImports": true,
+  "javascript.suggest.enabled": true,
+  "javascript.autoClosingTags": false,
+	"javascript.format.insertSpaceAfterSemicolonInForStatements": true,
+	"snippet.highlight": true,
+	"snippets.priority": 90,
+	"snippets.autoTrigger": true,
+	"snippets.extends": {
+		  "javascriptreact": ["javascript"],
+		  "typescript": ["javascript"]
+	}
+}
