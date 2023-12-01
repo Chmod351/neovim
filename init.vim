@@ -1,4 +1,5 @@
 :set mouse=a
+:set list
 :syntax enable
 :set showcmd
 :set encoding=utf-8
@@ -29,7 +30,7 @@
 :set nocursorcolumn
 :set colorcolumn=
 :set termguicolors "<--- watch colors on neovim usefull for frontend development"
-:set listchars=tab:\|\ ,trail:.
+:set listchars=tab:>-,trail:.,extends:>,precedes:<,nbsp:.
 :set fillchars+=vert:\ 
 :set statusline+=%{get(b:,'gitsigns_status','')}
 :set statusline+=\{…\}%3{codeium#GetStatusString()}
