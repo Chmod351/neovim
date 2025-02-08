@@ -14,9 +14,8 @@ set({"n", "v"}, "<space><down>", function() mc.lineSkipCursor(1) end)
 
 -- Agregar o saltar coincidencias
 set({"n", "v"}, "<space>n", function() mc.matchAddCursor(1) end)
-set({"n", "v"}, "<space>s", function() mc.matchSkipCursor(1) end)
+set({"n", "v"}, "<space>-", function() mc.matchSkipCursor(1) end)
 set({"n", "v"}, "<space>N", function() mc.matchAddCursor(-1) end)
-set({"n", "v"}, "<space>S", function() mc.matchSkipCursor(-1) end)
 
 -- Agregar todas las coincidencias
 set({"n", "v"}, "<space>A", mc.matchAllAddCursors)
@@ -45,7 +44,7 @@ set("n", "<esc>", function()
 end)
 
 -- Restaurar cursores borrados accidentalmente
-set("n", "<space>gv", mc.restoreCursors)
+-- set("n", "<space>gv", mc.restoreCursors)
 
 -- Alinear cursores
 set("n", "<space>a", mc.alignCursors)
