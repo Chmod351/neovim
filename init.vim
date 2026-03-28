@@ -1,7 +1,8 @@
 syntax enable
 :set autoindent
 :set cc=80
-:set completeopt=menuone,noinsert,noselect
+:set completeopt=menu,menuone,noinsert,noselect
+:set shortmess+=c
 :set confirm
 :set conceallevel=2 concealcursor=n
 :set colorcolumn=
@@ -62,11 +63,13 @@ augroup numbertoggle
 augroup END
 
 " ----------------------------
-let g:codeium_panel=1
+let g:loaded_node_provider = 0
+let g:loaded_perl_provider = 0
+let g:loaded_ruby_provider = 0
+let g:loaded_python3_provider = 0
+
 " PLUGINS CONFIG
 source ~/.config/nvim/pluginsConfig/plugins.vim
-source ~/.config/nvim/pluginsConfig/cocConfig.vim
-source ~/.config/nvim/pluginsConfig/lspServer.vim
 source ~/.config/nvim/pluginsConfig/typescriptTools.vim
 source ~/.config/nvim/pluginsConfig/highlight.vim
 source ~/.config/nvim/pluginsConfig/menu.vim

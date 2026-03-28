@@ -1,6 +1,5 @@
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
-Plug 'neoclide/coc-tsserver'
 " Plug 'williamboman/mason.nvim'  "<--useless
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-treesitter/nvim-treesitter'
@@ -12,15 +11,7 @@ Plug 'EdenEast/nightfox.nvim' " Vim-Plug
 Plug 'tribela/vim-transparent' "<--uselessplgPlg
 
 "autocompletado  requiere sudo npm install -g typescript typescript-language-server && npm install -g taliwind && sudo npm install --global eslint-lsp
-"plugins instalados con coc :
-"coc-prettier 
-"coc-eslint  
-"coc-diagnostic
-"@yaegassy/coc-tailwindcss3 
-"coc-snippets
-Plug 'Exafunction/codeium.vim'
-Plug 'neoclide/coc.nvim',{'branch': 'release'}
-Plug 'neoclide/coc-emmet'
+" Plug 'Exafunction/codeium.vim'
 
 " search and replace 
 Plug 's1n7ax/nvim-search-and-replace'
@@ -46,7 +37,6 @@ Plug 'nvim-tree/nvim-web-devicons'  "<--useless only needed by telescope
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'tpope/vim-surround'
-" Plug 'fannheyward/coc-react-refactor'
 
 "barra de status
 Plug 'vim-airline/vim-airline'

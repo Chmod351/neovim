@@ -16,24 +16,12 @@ let g:telescope_initial_mode = 'insert'
 
 lua << EOF
 require('telescope').setup({
- defaults = {
-    layout_strategy = 'horizontal',
-    layout_config = {
-      vertical = { mirror = false },
-      horizontal = { mirror = false },
+  defaults = {
+    -- Desactivamos treesitter en la preview para evitar el error 'ft_to_lang'
+    preview = {
+      treesitter = false,
     },
-    file_ignore_patterns = {},
-    prompt_position = "bottom",
-    scroll_speed = 10,
-    preview_cutoff = 120,
-    results_height = 1,
-    results_scroll_offset = 1,
-
-    borderchars = {'─', '│', '-', '│', '╭', '╮', '╯', '╰'},
-    prompt_prefix = '👉 ',
-    initial_mode = 'insert',
-    selection_strategy = 'reset',
-    sorting_strategy = 'descending',
+    layout_strategy = 'horizontal',
     layout_config = {
       horizontal = {
         preview_width = 0.6,
@@ -42,21 +30,24 @@ require('telescope').setup({
         preview_height = 0.5,
       },
     },
+    prompt_prefix = '👉 ',
+    selection_caret = "󰁔 ",
+    entry_prefix = "  ",
+    initial_mode = 'insert',
+    selection_strategy = 'reset',
+    sorting_strategy = 'descending',
     winblend = 15,
-    selection_cycling = false,
-    use_filetree = false,
-    use_lsp = false,
-    use_file_picker = false,
-    use_git = false,
-    use_which_key = false,
-    use_fzy = false,
-    use_filetree = false,
-    use_lsp = false,
-    extensions = {
-    fzf_live_grep = {
-      enable_native = true,
-    },
+    borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+    file_ignore_patterns = { "node_modules", ".git/" },
   },
- },
+  extensions = {
+    -- Si tenés instalado el fzf nativo, esto lo carga
+    fzf = {
+      fuzzy = true,
+      override_generic_sorter = true,
+      override_file_sorter = true,
+      case_mode = "smart_case",
+    }
+  }
 })
 EOF
