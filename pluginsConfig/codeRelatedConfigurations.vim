@@ -1,8 +1,6 @@
-"configuracion de format
-
-
+" Muestra el popup de error o documentación bajo el cursor
+nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <space>t <cmd>:tag<cr>
-
 "find 
 nnoremap <Space>p /
 

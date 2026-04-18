@@ -3,7 +3,9 @@
 " colorscheme gruvbox-material
 " colorscheme retrobox
 " colorscheme habamax
-colorscheme tokyonight-storm
+" colorscheme tokyonight-storm
+
+colorscheme mfd-nerv
 let g:highlightedyank_highlight_duration = 1000
 let g:terminal_color=15
 

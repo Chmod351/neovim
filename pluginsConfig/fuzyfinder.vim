@@ -15,20 +15,19 @@ let g:telescope_prompt_position = "bottom"
 let g:telescope_initial_mode = 'insert'
 
 lua << EOF
-require('telescope').setup({
+local telescope = require('telescope')
+
+telescope.setup({
   defaults = {
-    -- Desactivamos treesitter en la preview para evitar el error 'ft_to_lang'
-    preview = {
-      treesitter = false,
-    },
-    layout_strategy = 'horizontal',
-    layout_config = {
-      horizontal = {
-        preview_width = 0.6,
-      },
-      vertical = {
-        preview_height = 0.5,
-      },
+    -- El motor interno: si esto falla, no busca nada
+    vimgrep_arguments = {
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case'
     },
     prompt_prefix = '👉 ',
     selection_caret = "󰁔 ",
@@ -36,12 +35,24 @@ require('telescope').setup({
     initial_mode = 'insert',
     selection_strategy = 'reset',
     sorting_strategy = 'descending',
+    layout_strategy = 'horizontal',
+    layout_config = {
+      horizontal = {
+        preview_width = 0.6,
+        prompt_position = "bottom", 
+        },
+    },
+    file_ignore_patterns = { "node_modules", ".git/", "dist", "build" },
     winblend = 15,
     borderchars = {'─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-    file_ignore_patterns = { "node_modules", ".git/" },
+  },
+  pickers = {
+    find_files = {
+      theme = "dropdown", 
+      hidden = true      
+    }
   },
   extensions = {
-    -- Si tenés instalado el fzf nativo, esto lo carga
     fzf = {
       fuzzy = true,
       override_generic_sorter = true,
@@ -50,4 +61,6 @@ require('telescope').setup({
     }
   }
 })
+
+pcall(telescope.load_extension, 'fzf')
 EOF

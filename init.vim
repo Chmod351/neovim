@@ -1,7 +1,7 @@
 syntax enable
 :set autoindent
 :set cc=80
-:set completeopt=menu,menuone,noinsert,noselect
+set completeopt=menu,menuone,noselect
 :set shortmess+=c
 :set confirm
 :set conceallevel=2 concealcursor=n
@@ -44,7 +44,7 @@ let g:typescript_tsserver = 1
 :set scrolloff=8
 :set sidescrolloff=8
 :set statusline+=%{get(b:,'gitsigns_status','')}
-:set statusline+=\{…\}%3{codeium#GetStatusString()}
+" :set statusline+=\{…\}%3{codeium#GetStatusString()}
 :set signcolumn=yes
 :set tabstop=2
 :set termguicolors "<--- watch colors on neovim usefull for frontend development"
@@ -54,14 +54,12 @@ let g:typescript_tsserver = 1
 :set visualbell
 :set wrap
 :set statuscolumn = "%s %l %r"
-:help statuscolumn
+" :help statuscolumn
 :set statusline+=%{get(b:,'gitsigns_status','')}
-augroup numbertoggle
-	autocmd!
-	autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
-	autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
-augroup END
+" autocmd BufWritePre *.ts,*.tsx,*.js,*.jsx EslintFixAll
 
+
+"
 " ----------------------------
 let g:loaded_node_provider = 0
 let g:loaded_perl_provider = 0
@@ -80,5 +78,7 @@ source ~/.config/nvim/pluginsConfig/codeRelatedConfigurations.vim
 source ~/.config/nvim/pluginsConfig/fuzyfinder.vim
 source ~/.config/nvim/pluginsConfig/commenter.vim
 source ~/.config/nvim/pluginsConfig/multicursor.vim
+source ~/.config/nvim/pluginsConfig/lspConfig.vim
+source ~/.config/nvim/pluginsConfig/errormsg.vim
 " SEARCH AND REPLACE
 source ~/.config/nvim/pluginsConfig/searchAndReplace.vim
